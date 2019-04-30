@@ -49,7 +49,11 @@ module.exports = {
                 ]
             },
             {
-                test: /\.(jpg?g|png|gif)$/i,
+                test: /\.jsx$/,
+                loader: 'babel-loader'
+            },
+            {
+                test: /\.(jpg?g|png|gif)$/,
                 use: [
                     {
                         loader: 'url-loader',
@@ -66,7 +70,7 @@ module.exports = {
                 ]
             },
             {
-                test: /\.(mp4|webm|ogg|mp3|wav|flac|aac)?$/,
+                test: /\.(mp4|webm|ogg|mp3|wav|flac|aac)(\?.*)?$/,
                 use: [
                     {
                         loader: 'url-loader',
@@ -74,7 +78,7 @@ module.exports = {
                             limit: 4096,
                             fallback: {
                                 loader: 'file-loader',
-                                options: 'media/[name]:[hash:8].[ext]'
+                                options: 'media/[name].[hash:8].[ext]'
                             }
                         }
                     },
@@ -97,10 +101,7 @@ module.exports = {
                     }
                 ]
             },
-            {
-                test: /\.jsx$/,
-                loader: 'babel-loader'
-            },
+
             {
                 test: /\.(scss|sass)$/,
                 use: [
