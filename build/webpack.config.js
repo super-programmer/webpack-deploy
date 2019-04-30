@@ -49,11 +49,11 @@ module.exports = {
                 ]
             },
             {
-                test: /\.jsx$/,
+                test: /\.jsx?$/,
                 loader: 'babel-loader'
             },
             {
-                test: /\.(jpg?g|png|gif)$/,
+                test: /\.(jpe?g|png|gif)$/,
                 use: [
                     {
                         loader: 'url-loader',
