@@ -78,7 +78,9 @@ module.exports = {
                             limit: 4096,
                             fallback: {
                                 loader: 'file-loader',
-                                options: 'media/[name].[hash:8].[ext]'
+                                options: {
+                                    name:'media/[name].[hash:8].[ext]'
+                                }
                             }
                         }
                     },
@@ -101,27 +103,6 @@ module.exports = {
                     }
                 ]
             },
-
-            {
-                test: /\.(scss|sass)$/,
-                use: [
-                    {
-                        loader: 'style-loader'
-                    },
-                    {
-                        loader: 'css-loader'
-                    },
-                    {
-                        loader: 'sass-loader',
-                        options: {
-                            implementation: require('dart-sass')
-                        }
-                    },
-                    {
-                        loader: 'postcss-loader'
-                    }
-                ]
-            }
         ]
     },
     plugins: [
